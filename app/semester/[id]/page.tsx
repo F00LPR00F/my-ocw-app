@@ -22,10 +22,12 @@ export default function SemesterDetailPage({ params }: { params: Promise<{ id: s
   useEffect(() => {
     async function fetchSemesterCourses() {
       try {
-        const { coursesData, coursesError } = await supabase
-            .from('semesters')
-              .select(`id,name,courses (course_code,title,department)`)
-  .eq('id', 1);
+        setLoading(true);
+        // Correct destructuring syntax and querying the courses table directly
+        const { data: coursesData, error: coursesError } = await supabase
+          .from('courses')
+          .select('id, course_code, title, department, description')
+          .eq('sem_number', Number(semNumber));
 
         if (coursesError) {
           console.error('Error fetching subjects:', coursesError.message);
@@ -40,7 +42,9 @@ export default function SemesterDetailPage({ params }: { params: Promise<{ id: s
       }
     }
 
-    fetchSemesterCourses();
+    if (semNumber) {
+      fetchSemesterCourses();
+    }
   }, [semNumber]);
 
   return (
