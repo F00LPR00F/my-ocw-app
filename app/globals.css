@@ -1,0 +1,18 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+:root {
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #0b141a;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><g fill="none" stroke="%233b5262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20 h30 a10 10 0 0 1 10 10 v20 a10 10 0 0 1 -10 10 h-15 l-10 10 v-10 h-5 a10 10 0 0 1 -10 -10 v-20 a10 10 0 0 1 10 -10 z"/><circle cx="140" cy="40" r="14"/><line x1="150" y1="50" x2="165" y2="65"/><circle cx="50" cy="140" r="15"/><path d="M42 140 q8 8 16 0"/><polygon points="140,120 144,132 157,132 146,140 150,152 140,144 130,152 134,140 123,132 136,132"/><rect x="110" y="150" width="30" height="20" rx="4"/><circle cx="125" cy="160" r="4"/><path d="M170 140 c-5 -10 -20 -5 -20 5 c0 10 20 20 20 20 c0 0 20 -10 20 -20 c0 -10 -15 -15 -20 -5 z"/></g></svg>');
+  background-repeat: repeat;
+  background-size: 85px 85px;
+  background-attachment: fixed;
+}
